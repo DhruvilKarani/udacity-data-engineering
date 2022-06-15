@@ -13,7 +13,7 @@ def process_song_file(cur, filepath):
     df = pd.read_json(filepath, lines=True)
 
     # insert song record
-    song_data = [df.song_id.tolist()[0], df.title.tolist()[0], df.song_id.tolist()[0], df.year.tolist()[0], df.duration.tolist()[0]]
+    song_data = [df.song_id.tolist()[0], df.title.tolist()[0], df.artist_id.tolist()[0], df.year.tolist()[0], df.duration.tolist()[0]]
     cur.execute(song_table_insert, song_data)
     
     # insert artist record
